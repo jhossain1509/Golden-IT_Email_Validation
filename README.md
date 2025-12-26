@@ -27,9 +27,19 @@ An email validation tool that uses Google Sheets and browser automation to valid
    cd Golden-IT_Email_Validation
    ```
 
-2. Install dependencies:
+2. Check your environment:
+   ```bash
+   python quickstart.py
+   ```
+
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   ```
+
+4. (Optional) Run all checks to verify setup:
+   ```bash
+   python check_all.py
    ```
 
 ## Usage
@@ -74,6 +84,15 @@ email3@example.com
 ## License
 
 This software requires a valid license key. Contact via WhatsApp: +8801948241312
+
+## Utilities
+
+This project includes several utility scripts to help you verify your setup:
+
+- **quickstart.py** - Interactive quick start guide
+- **check_all.py** - Run all checks (syntax, dependencies, tests)
+- **check_dependencies.py** - Verify all dependencies are installed
+- **test_utils.py** - Unit tests for core utility functions
 
 ## Version
 
