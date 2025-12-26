@@ -83,18 +83,17 @@ def check_gitignore():
     
     # Check for patterns (some may be covered by wildcards)
     checks = [
-        ("__pycache__", "__pycache__", True),
-        ("*.py[codz]", "*.pyc (covered by *.py[codz])", True),
-        ("license.json", "license.json", "license.json" in content),
-        ("*_cleaned.txt", "output files (*_cleaned.txt)", "*_cleaned.txt" in content),
+        ("__pycache__", "__pycache__" in content),
+        ("*.pyc (covered by *.py[codz])", "*.py[codz]" in content),
+        ("license.json", "license.json" in content),
+        ("output files (*_cleaned.txt)", "*_cleaned.txt" in content),
     ]
     
-    all_ok = True
-    for pattern, display, check_result in checks:
-        if check_result:
-            print(f"✅ {display}")
+    for display_name, is_present in checks:
+        if is_present:
+            print(f"✅ {display_name}")
         else:
-            print(f"⚠️  {display} - not in .gitignore")
+            print(f"⚠️  {display_name} - not in .gitignore")
             # Not critical, just a warning
     
     return True  # Not critical

@@ -97,12 +97,13 @@ def test_email_cleaning():
     for email in cleaned:
         print(f"  - {email}")
     
-    expected_count = 3  # test@example.com, user@example.com, valid@test.com, another@test.com
-    if len(cleaned) == 4:
+    # Expected: test@example.com, user@example.com, valid@test.com, another@test.com
+    expected_count = 4
+    if len(cleaned) == expected_count:
         print("\n✅ Email cleaning works correctly")
         return True
     else:
-        print(f"\n❌ Expected 4 emails, got {len(cleaned)}")
+        print(f"\n❌ Expected {expected_count} emails, got {len(cleaned)}")
         return False
 
 def test_file_format_parsing():
